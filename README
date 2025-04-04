@@ -1,0 +1,11 @@
+Currently there is only a chat function to chat with the default chatbot named Jhon.
+To do this you call:
+
+chat(string user_input ,string bot_name)
+
+if the chatbot creates a reference to a proper noun or uses pronouns it flags the response and will try to generate a new chat bot WITH the context of the response.
+I have created a genereric input to reliably generate but haven't perfected the identification of referenced people in the response of the chatbot.
+
+branchable(response) returns true if response contains reference to another person besides the writer
+
+def branch_bot(response, bot_name) generates context for a chatbot that is related to the writer
