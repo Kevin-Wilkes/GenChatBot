@@ -1,11 +1,64 @@
-Currently there is only a chat function to chat with the default chatbot named Jhon.
-To do this you call:
+# Multi‑Bot Chat & Visualization Dashboard
 
-chat(string user_input ,string bot_name)
+A Dash-based web application that lets you chat with multiple Deepseek LLM-powered “bots” and visualizes their relationships as an interactive network graph.
+Each bot maintains its own conversation history, and new bots are added dynamically through conversation with another bot.
+The visualization tab shows bots as nodes and “your X is Y” relations as labeled edges.
 
-if the chatbot creates a reference to a proper noun or uses pronouns it flags the response and will try to generate a new chat bot WITH the context of the response.
-I have created a genereric input to reliably generate but haven't perfected the identification of referenced people in the response of the chatbot.
+---
 
-branchable(response) returns true if response contains reference to another person besides the writer
+## Features
 
-def branch_bot(response, bot_name) generates context for a chatbot that is related to the writer
+- **Chat interface**  
+  - Switch between bots in a sidebar  
+  - Per‑bot conversation history stored in a `dcc.Store`  
+  - Sticky input bar at the bottom  
+  - User & assistant messages rendered as chat bubbles
+
+- **Dynamic bot list**  
+  - Bot tabs in the sidebar update automatically whenever you add a new bot  
+  - Tabbing between “Chat” and “Visualization” panes
+
+- **Interactive network graph**  
+  - Uses `dash-cytoscape` to render bots as nodes  
+  - Extracts relations from each bot’s system prompt  
+  - Edges are labeled and styled (e.g. relation name)  
+  - Click a node to see that bot’s last 10 messages  
+  - Click an edge to see its relation & metadata
+
+- **Automatic polling**  
+  - A hidden `dcc.Interval` callback polls your global `conversation_history` every 2 seconds  
+  - Keeps the UI in sync with any external updates to your bot dictionary  
+
+---
+
+## Prerequisites
+
+- Python 3.8+  
+- pip  
+- (Optional) A virtual environment
+
+---
+
+
+## Dependencies
+
+### External Packages
+
+- **transformers** (incl. `BitsAndBytesConfig`)
+- **peft**
+- **torch**
+- **spacy**
+- **dash**
+- **dash‑cytoscape**
+- **numpy**
+
+### Standard Library Modules
+
+- `re`
+- `ast`
+- `typing`
+- `threading`
+- `webbrowser`
+
+#Youtuve demonstration
+https://youtu.be/_-9auYABb-o
