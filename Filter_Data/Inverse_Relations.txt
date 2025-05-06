@@ -1,0 +1,49 @@
+{
+    "grandmother":       ["grandson", "granddaughter"],
+    "grandfather":       ["grandson", "granddaughter"],
+    "granddaughter":     ["grandfather", "grandmother"],
+    "grandson":          ["grandfather", "grandmother"],
+
+    "mother":            ["son", "daughter"],
+    "mom":               ["son", "daughter"],
+    "father":            ["son", "daughter"],
+    "dad":               ["son", "daughter"],
+
+    "mother-in-law":     ["son-in-law", "daughter-in-law"],
+    "father-in-law":     ["son-in-law", "daughter-in-law"],
+    "son-in-law":        ["father-in-law", "mother-in-law"],
+    "daughter-in-law":   ["father-in-law", "mother-in-law"],
+
+    "stepmother":        ["stepson", "stepdaughter"],
+    "stepfather":        ["stepson", "stepdaughter"],
+    "stepson":           ["stepfather", "stepmother"],
+    "stepdaughter":      ["stepfather", "stepmother"],
+
+    "aunt":              ["nephew", "niece"],
+    "uncle":             ["nephew", "niece"],
+    "niece":             ["uncle", "aunt"],
+    "nephew":            ["uncle", "aunt"],
+
+    "husband":           ["wife"],
+    "wife":              ["husband"],
+
+    "brother-in-law":    ["sister-in-law"],
+    "sister-in-law":     ["brother-in-law"],
+
+    "brother":           ["sister"],
+    "sister":            ["brother"],
+
+    "half-brother":      ["half-sister"],
+    "half-sister":       ["half-brother"],
+
+    "stepbrother":       ["stepsister"],
+    "stepsister":        ["stepbrother"],
+
+    "cousin":            ["cousin"],
+
+    "son":               ["father", "mother"],
+    "daughter":          ["father", "mother"],
+
+    "kid":               ["parent"],
+    "children":          ["parent"],
+}
